@@ -31,10 +31,11 @@ public class Normalizer {
 				input = this.removeLeadingSpace(input, PunctuationRegEx);
 			}
 
-			input = input.replaceAll(" +", "");
-			input = input.replaceAll("^ ", "");
-			input = input.replaceAll("^\n", "");
 		}
+		input = input.replaceAll("  +", "");
+		input = input.replaceAll("^ +", "");
+		input = input.replaceAll("\n +", "");
+		input = input.replaceAll("^\n", "");
 		return input;
 	}
 

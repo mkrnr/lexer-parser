@@ -38,7 +38,6 @@ public class WikipediaNormalizer extends Normalizer {
 				line = this.normalizeString(line);
 				if (!line.isEmpty()) {
 					this.writer.write(line);
-					this.writer.flush();
 				}
 			}
 			this.writer.close();
