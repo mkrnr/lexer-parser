@@ -33,9 +33,10 @@ public class Normalizer {
 
 		}
 		input = input.replaceAll("  +", " ");
-		input = input.replaceAll("^ +", "");
+		input = input.replaceAll("^ *", "");
 		input = input.replaceAll(" \n", "\n");
 		input = input.replaceAll("\n ", "\n");
+		input = input.replaceAll("\n+", "\n");
 		input = input.replaceAll("^\n", "");
 		return input;
 	}
