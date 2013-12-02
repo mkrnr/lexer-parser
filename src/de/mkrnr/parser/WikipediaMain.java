@@ -33,12 +33,12 @@ public class WikipediaMain {
 			String normalizedOutputPath) throws IOException {
 
 		long startTime = System.currentTimeMillis();
-		// WikipediaTokenizer tokenizer = new WikipediaTokenizer(wikiInputPath);
-		// WikipediaRecognizer recognizer = new WikipediaRecognizer(tokenizer);
-		// WikipediaParser parser = new WikipediaParser(recognizer,
-		// parsedOutputPath);
-		// IOHelper.log("start parsing: " + wikiInputPath);
-		// parser.parse();
+		WikipediaTokenizer tokenizer = new WikipediaTokenizer(wikiInputPath);
+		WikipediaRecognizer recognizer = new WikipediaRecognizer(tokenizer);
+		WikipediaParser parser = new WikipediaParser(recognizer,
+				parsedOutputPath);
+		IOHelper.log("start parsing: " + wikiInputPath);
+		parser.parse();
 		IOHelper.log("parsing done");
 		IOHelper.log("start cleanup");
 		WikipediaNormalizer wn = new WikipediaNormalizer(parsedOutputPath,
