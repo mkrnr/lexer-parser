@@ -7,7 +7,7 @@ import de.mkrnr.parser.WikipediaMain;
 import de.mkrnr.utils.Config;
 import de.mkrnr.utils.IOHelper;
 
-public class WikiBuilder extends Builder {
+public class WikiBuilder {
 
 	/**
 	 * executes the following steps:
@@ -27,7 +27,6 @@ public class WikiBuilder extends Builder {
 	 */
 	public static void main(String[] args) throws IOException {
 		IOHelper.strongLog("start: WikiBuilder");
-		WikiBuilder wb = new WikiBuilder();
 		File dir = new File(Config.get().wikiInputDirectory);
 		String outputDirectory = Config.get().outputDirectory + "wiki/";
 		String parsedFileName = "parsed.txt";
@@ -41,15 +40,12 @@ public class WikiBuilder extends Builder {
 			IOHelper.strongLog("start building: " + outputPath);
 			new File(outputPath).mkdirs();
 
-			if (Config.get().parseData) {
-				try {
-					WikipediaMain.run(f.getAbsolutePath(), outputPath
-							+ parsedFileName, outputPath + normalizedFileName);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+			try {
+				WikipediaMain.run(f.getAbsolutePath(), outputPath
+						+ parsedFileName, outputPath + normalizedFileName);
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			wb.build(outputPath);
 			IOHelper.strongLog("done building: " + outputPath);
 		}
 		IOHelper.strongLog("done: WikiBuilder");

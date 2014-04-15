@@ -14,7 +14,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,12 +42,8 @@ public class AcquisTokenizer extends Tokenizer {
 	public AcquisTokenizer(File f, String acquisLanguage) {
 		Reader r;
 		try {
-			r = new InputStreamReader(new FileInputStream(f.getAbsolutePath()),
-					"UnicodeLittle");
+			r = new InputStreamReader(new FileInputStream(f.getAbsolutePath()));
 			this.reader = new BufferedReader(r);
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

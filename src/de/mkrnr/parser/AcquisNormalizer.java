@@ -22,6 +22,8 @@ public class AcquisNormalizer extends Normalizer {
 
 	public AcquisNormalizer(String input, String output, Locale locale) {
 		super(locale);
+		System.out.println(input);
+		System.out.println(output);
 		this.reader = IOHelper.openReadFile(input);
 		this.writer = IOHelper.openWriteFile(output, 32 * 1024 * 1024);
 
@@ -35,6 +37,7 @@ public class AcquisNormalizer extends Normalizer {
 					this.writer.write(this.line);
 					this.writer.flush();
 				}
+				this.writer.flush();
 			}
 			this.writer.close();
 		} catch (IOException e) {

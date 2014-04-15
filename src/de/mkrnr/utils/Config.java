@@ -22,48 +22,6 @@ import java.util.Properties;
  */
 public class Config extends Properties {
 
-	// CONTROLL PARAMETERS
-	public String dbUser;
-
-	public String rawLogDir;
-
-	public String trainedOnDataSet;
-	public String trainedOnLang;
-	public String testedOnDataSet;
-	public String testedOnLang;
-	public String dataBaseType;
-	public String resultLogDirName;
-
-	public String weight;
-	public boolean useWeights;
-
-	public boolean parseData;
-	public boolean splitData;
-	public boolean buildStats;
-	public boolean buildIndex;
-	public boolean buildNGrams;
-	public boolean buildGLM;
-	public boolean build_absoluteGLM;
-	public boolean buildTypoEdges;
-	public boolean revertSort;
-	public boolean aggregateAbsolute_;
-
-	public boolean deleteTempFiles;
-
-	public boolean addSentenceTags;
-	public boolean addFakeStartTag;
-
-	public boolean resultLog10;
-	// DEBUGGING
-	public String inputDataSet;
-
-	public String trainingPath;
-	public String testingPath;
-	public String learningPath;
-
-	// STEP 0 GLOBAL CONFIGS
-	public boolean weightedPredictions;
-
 	public String acquisInputDirectory;
 	public String enronInputDirectory;
 	public String googleInputDirectory;
@@ -73,36 +31,13 @@ public class Config extends Properties {
 
 	public boolean splitPunctuation;
 
-	public int fileSizeThreashhold;
 	public String outputDirectory;
 	public int memoryLimitForWritingFiles;
 	public int memoryLimitForReadingFiles;
-	public int maxCountDivider;
-	public int minCountPerFile;
-	public int modelLength;
-
-	public int numberOfQueries;
-	public int subResultSize;
-
-	// STEP 2 SAMPLING AND MAKE TRAININGS DATA SPLIT
-	public int sampleRate; // \in [0, 100] 0 means no data from input will be
-	// used. 100 means all input data will be used
-	public int splitDataRatio; // \in [0, 100] 0 means no training data. 100
-	// means only training data
-	public int splitTestRatio; // \in [0, 100] 0 means all data is stored in
-	// test file. 100 means all data is stored in (smaller) learning file
 
 	// OTHER VARIABLES...
 	public String wikiLinksOutputPath;
 	public String wikiLinksHead;
-
-	// used in de.typology.utils/WordCounter
-	public String wordCountInput;
-	public String wordCountStats;
-	// used in de.typology.utils/LineCounter
-	public String lineCountInput;
-	public String lineCountStats;
-	public String dataSet;
 
 	private static final long serialVersionUID = -4439565094382127683L;
 
